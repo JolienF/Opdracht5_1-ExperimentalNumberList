@@ -18,8 +18,8 @@ public class ExperimentalNumberList {
 	public ExperimentalNumberList(int[] numberList) {
 		this.numberList = numberList;
 		this.numberOfElements = numberList.length;
-		minimumValue = findMin( numberList );
-		maximumValue = findMax( numberList );
+		minimumValue = findMin(numberList);
+		maximumValue = findMax(numberList);
 	}
 
 	/**
@@ -43,7 +43,19 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public boolean equalValuesExist() {
-	    // Fill in your answer.
+		int startingNumber = 1;
+		for (int number = 0; number < numberList.length - 1; number++) {
+
+			for (int otherNumber = startingNumber; otherNumber < numberList.length ; otherNumber++) {
+				if (numberList[number] == numberList[otherNumber]) {
+
+					return true;
+				}
+				System.out.println(number + " " + otherNumber);
+			}
+			startingNumber++;
+		}
+
 		return false;
 	}
 
