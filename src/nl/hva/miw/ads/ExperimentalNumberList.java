@@ -22,6 +22,7 @@ public class ExperimentalNumberList {
 		maximumValue = findMax(numberList);
 	}
 
+
 	/**
 	 * Generate random numbers from min to max.
 	 *
@@ -51,11 +52,9 @@ public class ExperimentalNumberList {
 
 					return true;
 				}
-				System.out.println(number + " " + otherNumber);
 			}
 			startingNumber++;
 		}
-
 		return false;
 	}
 
