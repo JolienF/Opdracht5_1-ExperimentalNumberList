@@ -140,6 +140,7 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public boolean isLocalMaximum(int i) {
+
 		for (int j = 0; j < i; j++) {
 			if (numberList[j] > numberList[i]) {
 				return false;
@@ -158,11 +159,11 @@ public class ExperimentalNumberList {
 	public int[] locationOfLocalMaximum() {
 		int[] indexOfMaxima = new int[numberOfLocalMaximum()];
 
-		for (int i : numberList) {
-			for (int j = 0; j < indexOfMaxima.length; j++) {
-				if (isLocalMaximum(i)) {
-					indexOfMaxima[j] = i;
-				}
+		int jndex = 0;
+		for (int index = 0; index < numberList.length; index++) {
+			if (isLocalMaximum(index)) {
+				indexOfMaxima[jndex] = index;
+				jndex++;
 			}
 		}
 
@@ -177,7 +178,7 @@ public class ExperimentalNumberList {
 	public int numberOfLocalMaximum() {
 	    int numberOfMaximum = 0;
 
-		for (int i : numberList) {
+		for (int i = 0; i < numberList.length; i++) {
 			if (isLocalMaximum(i)) {
 				numberOfMaximum++;
 			}

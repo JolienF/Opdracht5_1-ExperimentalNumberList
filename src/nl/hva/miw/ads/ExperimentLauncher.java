@@ -24,16 +24,19 @@ public class ExperimentLauncher {
 //			System.out.println(experimentalNumberList.equalValuesExist());
 //		}
 
-		ExperimentalNumberList experimentalNumberList2 = new ExperimentalNumberList(10);
+		ExperimentalNumberList experimentalNumberList2 = new ExperimentalNumberList(50);
 		experimentalNumberList2.generateNumbers(-100, 100);
 
 		System.out.println("Number of positives: "  + experimentalNumberList2.countPositives());
 		System.out.println("Sum of positives: "  + experimentalNumberList2.sumOfPositives());
 		System.out.println("Maxvalue: "  + experimentalNumberList2.maxValue());
 		System.out.println("Number of different values: "  + experimentalNumberList2.numberOfDifferentValues());
+		System.out.println("Is local maximum at 8: "  + experimentalNumberList2.isLocalMaximum(8));
 		System.out.println("Number of local maximum: "  + experimentalNumberList2.numberOfLocalMaximum());
-		System.out.println("Location of local maximum: "  + experimentalNumberList2.locationOfLocalMaximum());
-
-
+		System.out.print("Location of local maximum: ");
+		int[] maxLocation = experimentalNumberList2.locationOfLocalMaximum();
+		for (int i = 0; i < maxLocation.length; i++) {
+			System.out.print(maxLocation[i] + ", ");
+		}
 	}
 }
