@@ -2,6 +2,8 @@ package nl.hva.miw.ads;
 
 public class ExperimentLauncher {
 
+	public static final int AMOUNT_OF_LISTS = 100;
+
 	public static void main(String[] args) {
 		// Write your own main method.
 
@@ -16,10 +18,22 @@ public class ExperimentLauncher {
 //		exList2.generateNumbers(1, 365);
 //		System.out.println(exList2.equalValuesExist());
 
-		for (int lijst = 0; lijst < 100; lijst++) {
-			ExperimentalNumberList experimentalNumberList = new ExperimentalNumberList(30);
-			experimentalNumberList.generateNumbers(1, 365);
-			System.out.println(experimentalNumberList.equalValuesExist());
-		}
+//		for (int lijst = 0; lijst < AMOUNT_OF_LISTS; lijst++) {
+//			ExperimentalNumberList experimentalNumberList = new ExperimentalNumberList(30);
+//			experimentalNumberList.generateNumbers(1, 365);
+//			System.out.println(experimentalNumberList.equalValuesExist());
+//		}
+
+		ExperimentalNumberList experimentalNumberList2 = new ExperimentalNumberList(10);
+		experimentalNumberList2.generateNumbers(-100, 100);
+
+		System.out.println("Number of positives: "  + experimentalNumberList2.countPositives());
+		System.out.println("Sum of positives: "  + experimentalNumberList2.sumOfPositives());
+		System.out.println("Maxvalue: "  + experimentalNumberList2.maxValue());
+		System.out.println("Number of different values: "  + experimentalNumberList2.numberOfDifferentValues());
+		System.out.println("Number of local maximum: "  + experimentalNumberList2.numberOfLocalMaximum());
+		System.out.println("Location of local maximum: "  + experimentalNumberList2.locationOfLocalMaximum());
+
+
 	}
 }

@@ -85,14 +85,15 @@ public class ExperimentalNumberList {
 	public int sumOfPositives() {
 		int sum = 0;
 
-		for (int i : numberList) {
-			if (numberList[i] > 0) {
-				sum += numberList[i];
+		for (int index = 0; index < numberList.length; index++) {
+			if (numberList[index] > 0) {
+				sum += numberList[index];
 			}
 		}
 
 		return sum;
 	}
+
 
 	/**
 	 * Find the max value.
@@ -102,11 +103,12 @@ public class ExperimentalNumberList {
 	public int maxValue() {
 		int max = numberList[0];
 
-		for (int i : numberList) {
-			if (numberList[i] > max) {
-				max = numberList[i];
+		for (int number : numberList) {
+			if (number > max) {
+				max = number;
 			}
 		}
+
 		return max;
 	}
 
@@ -118,8 +120,8 @@ public class ExperimentalNumberList {
 	public int numberOfDifferentValues() {
 		Set<Integer> setOfNumberList = new HashSet<>();
 
-		for (int i : numberList) {
-			setOfNumberList.add((Integer) numberList[i]);
+		for (int number : numberList) {
+			setOfNumberList.add((Integer) number);
 		}
 
 		return setOfNumberList.size();
@@ -183,7 +185,6 @@ public class ExperimentalNumberList {
 
 		return numberOfMaximum;
 	}
-
 
 	public int getValueAtIndex(int i) {
 		return this.numberList[i];
