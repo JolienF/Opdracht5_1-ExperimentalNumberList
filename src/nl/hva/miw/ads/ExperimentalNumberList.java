@@ -1,6 +1,8 @@
 package nl.hva.miw.ads;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ExperimentalNumberList {
 	private int[] numberList;
@@ -64,8 +66,15 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public int countPositives() {
-		// Fill in your answer
-		return 0;
+		int positives = 0;
+
+		for (int i = 0; i < numberList.length; i++) {
+			if (numberList[i] > 0) {
+				positives++;
+			}
+		}
+
+		return positives;
 	}
 
 	/**
@@ -74,8 +83,15 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public int sumOfPositives() {
-	    // Fill in your answer
-		return 0;
+		int sum = 0;
+
+		for (int i : numberList) {
+			if (numberList[i] > 0) {
+				sum += numberList[i];
+			}
+		}
+
+		return sum;
 	}
 
 	/**
@@ -84,8 +100,14 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public int maxValue() {
-		// Fill in your answer
-		return 0;
+		int max = numberList[0];
+
+		for (int i : numberList) {
+			if (numberList[i] > max) {
+				max = numberList[i];
+			}
+		}
+		return max;
 	}
 
 	/**
@@ -94,8 +116,13 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public int numberOfDifferentValues() {
-		// Fill in your answer
-		return 0;
+		Set<Integer> setOfNumberList = new HashSet<>();
+
+		for (int i : numberList) {
+			setOfNumberList.add((Integer) numberList[i]);
+		}
+
+		return setOfNumberList.size();
 	}
 	
 	public int numberOfDifferentValuesVersion2() {
