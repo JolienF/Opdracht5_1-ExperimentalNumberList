@@ -138,8 +138,13 @@ public class ExperimentalNumberList {
 	 * @return
 	 */
 	public boolean isLocalMaximum(int i) {
-		// Fill in your answer
-		return false;
+		for (int j = 0; j < i; j++) {
+			if (numberList[j] > numberList[i]) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 
